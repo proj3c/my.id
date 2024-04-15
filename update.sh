@@ -67,7 +67,7 @@ res1() {
     #rm -rf menu
     #rm -rf menu.zip
     #rm -rf update.sh
-    instalasi="https://raw.githubusercontent.com/owl64/AutoSC/main/"
+    instalasi="https://raw.githubusercontent.com/proj3c/my.id/main/"
 
     mkdir menu
     cd menu
@@ -160,9 +160,9 @@ res1() {
     ##Check Version SC
     versi123=$(cat /root/versi/version)
 
-    IZIN=$( curl https://raw.githubusercontent.com/owl64/AutoSC/main/system/version | grep $versi123 ); >/dev/null 2>&1
+    IZIN=$( curl https://raw.githubusercontent.com/proj3c/my.id/main/system/version | grep $versi123 ); >/dev/null 2>&1
 
-    versiupdate=$(curl https://raw.githubusercontent.com/owl64/AutoSC/main/system/version);
+    versiupdate=$(curl https://raw.githubusercontent.com/proj3c/my.id/main/system/version);
 
 function gantiSC(){
     wget -O /root/versi/version "${instalasi}system/version" >/dev/null 2>&1
@@ -224,7 +224,7 @@ fi
 }
 
 function iplimit(){
-    instalasi="https://raw.githubusercontent.com/owl64/AutoSC/main/"
+    instalasi="https://raw.githubusercontent.com/proj3c/my.id/main/"
     cd /root
     wget -O limit-ip "${instalasi}config/limit-ip"
     cp /root/limit-ip /usr/bin/
@@ -245,12 +245,12 @@ function iplimit(){
 }
 
 function limitquotaxray(){
-    wget https://raw.githubusercontent.com/owl64/AutoSC/main/limit/limit.sh && chmod +x limit.sh && ./limit.sh
+    wget https://raw.githubusercontent.com/proj3c/my.id/main/limit/limit.sh && chmod +x limit.sh && ./limit.sh
     rm -rf /root/limit.sh
 }
 
 function limitxrayip(){
-    instalasi="https://raw.githubusercontent.com/owl64/AutoSC/main/"
+    instalasi="https://raw.githubusercontent.com/proj3c/my.id/main/"
     cd /root
     wget -O limit-ip "${instalasi}limit/limit-ip"
     cp /root/limit-ip /usr/bin/
@@ -300,7 +300,7 @@ function update(){
 netfilter-persistent
 clear
 echo -e "${z}┌──────────────────────────────────────────┐\033[0m"
-echo -e "             UPDATE SCRIPT SDC STORE       "
+echo -e "             UPDATE SCRIPT Projects TL      "
 echo -e "${z}└──────────────────────────────────────────┘\033[0m"
 echo -e ""
             if [ $versi123 = $IZIN ]; then
