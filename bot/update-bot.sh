@@ -85,6 +85,10 @@ function botupdatesystem(){
     wget "${url}/update/shel/bot-trial-trojan"
     wget "${url}/update/shel/bot-trial-vless"
     wget "${url}/update/shel/bot-trial-ws"
+    wget "${url}/update/shel/bot-cekpelanggan"
+    wget "${url}/update/shel/bot-deleteip"
+    wget "${url}/update/shel/bot-registrasi"
+    wget "${url}/update/shel/bot-perpanjang"
 
     cd /root
     chmod +x shelbot/*
