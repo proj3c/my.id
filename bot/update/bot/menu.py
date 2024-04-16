@@ -49,18 +49,18 @@ Button.inline(" [ Settings Manager ] ","setting")],
 
 		msg = f"""
 ━━━━━━━━━━━━━━━━━━━━━ 
-**👑 ADMIN PANEL MENU 👑**
+👑 ADMIN PANEL MENU 👑
 ━━━━━━━━━━━━━━━━━━━━━ 
-**» OS     :** `{namaos.strip().replace('"','')}`
-**» CITY   :** `{city.strip()}`
-**» HOST   :** `{domaintele.strip()}`
-**» IP VPS :** `{ipsaya.strip()}`
-**» Total Account Created:** 
+» OS     : `{namaos.strip().replace('"','')}`
+» CITY   : `{city.strip()}`
+» HOST   : `{domaintele.strip()}`
+» IP VPS : `{ipsaya.strip()}`
+» Total Account Created: 
 
-**» 🚀SSH OVPN    :** `{ssh.strip()}` __account__
-**» 🎭XRAY VMESS  :** `{outputvms.strip()}` __account__
-**» 🗼XRAY VLESS  :** `{outputvls.strip()}` __account__
-**» 🎯XRAY TROJAN :** `{outputtr.strip()}` __account__
+» 🚀SSH OVPN    : `{ssh.strip()}` __account__
+» 🎭XRAY VMESS  : `{outputvms.strip()}` __account__
+» 🗼XRAY VLESS  : `{outputvls.strip()}` __account__
+» 🎯XRAY TROJAN : `{outputtr.strip()}` __account__
 ━━━━━━━━━━━━━━━━━━━━━━━ 
 **» Version BOT:** `{outputversion1.strip()}` __Beta__ 
 """
