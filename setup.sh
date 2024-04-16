@@ -1211,17 +1211,39 @@ rm -rf /root/*.sh
 rm -rf /root/LICENSE
 rm -rf /root/README.md
 rm -rf /root/domain
+clear
+clear
+echo -e "${Green} CHECK ALL SERVICE ONLINE!!!${Font}"
 printf "${YELLOW}SSH... "
         for _ in {1..10}; do
-            printf "▓"
+            printf "⏳"
             sleep 0.2
         done
         echo -e "\e[32m done!${FONT}"
+printf "${YELLOW}VMESS... "
+        for _ in {1..10}; do
+            printf "⏳"
+            sleep 0.2
+        done
+        echo -e "\e[32m done!${FONT}"
+printf "${YELLOW}VLESS... "
+        for _ in {1..10}; do
+            printf "⏳"
+            sleep 0.2
+        done
+        echo -e "\e[32m done!${FONT}"
+printf "${YELLOW}TROJAN... "
+        for _ in {1..10}; do
+            printf "⏳"
+            sleep 0.2
+        done
+        echo -e "\e[32m done!${FONT}"        
+echo -e "${Green}Installation completed successfully${Font}"                                       
         
 #sudo hostnamectl set-hostname $user
 secs_to_human "$(($(date +%s) - ${start}))"
 sudo hostnamectl set-hostname $username
-echo -e "${Green}Installation completed successfully${Font}"
+#echo -e "${Green}Installation completed successfully${Font}"
 echo ""
 read -p "$( echo -e "Press ${YELLOW}[ ${NC}${YELLOW}Enter${NC} ${YELLOW}]${NC} For Reboot") "
 reboot
