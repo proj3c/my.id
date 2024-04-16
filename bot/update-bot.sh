@@ -95,6 +95,7 @@ function botupdatesystem(){
     cd botupdate
 
     wget "${url}/update/bot/info.py"
+    wget "${url}/update/bot/menu1.py"
     wget "${url}/update/bot/menu.py"
     wget "${url}/update/bot/setting.py"
     wget "${url}/update/bot/shadowsocks.py"
