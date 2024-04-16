@@ -38,9 +38,13 @@ echo -e " This Will Quick Setup VPN Server On Your Server"
 echo -e "  Auther : ${green}SDC TUNNELING® ${NC}${YELLOW}(${NC} ${green} SDC STORE ${NC}${YELLOW})${NC}"
 echo -e " Recode By SDC VPN STORE${YELLOW}(${NC} 2023 ${YELLOW})${NC}"
 echo -e "${YELLOW}----------------------------------------------------------${NC}"
-echo -e "\e[32mloading...\e[0m"
-echo ""
-sleep 3
+    printf "${YELLOW}loading... "
+    for _ in {1..1}; do
+        printf "▓▓▓▓▓▓▓▓▓▓▓▓▓"
+        sleep 5
+    done
+    echo -e "\e[32m done!${FONT}"
+    echo ""
 ###### IZIN SC 
 
 # // Checking Os Architecture
@@ -153,41 +157,60 @@ start=$(date +%s)
 secs_to_human() {
     echo "Installation time : $((${1} / 3600)) hours $(((${1} / 60) % 60)) minute's $((${1} % 60)) seconds"
 }
-### Status
+# Deklarasi variabel untuk warna teks
+OK="\033[1;32m[✓]\033[0m"
+ERROR="\033[1;31m[❌]\033[0m"
+YELLOW="\033[1;33m"
+BLUE="\033[1;34m"
+GREEN="\033[0;32m"
+REDBG="\033[41m"
+FONT="\033[0m"
+
+# Fungsi untuk mencetak pesan OK
 function print_ok() {
     echo -e "${OK} ${BLUE} $1 ${FONT}"
 }
+
+# Fungsi untuk mencetak pesan instalasi
 function print_install() {
-	echo -e "${green} =============================== ${FONT}"
+    echo -e "${GREEN} =============================== ${FONT}"
     echo -e "${YELLOW} # $1 ${FONT}"
-	echo -e "${green} =============================== ${FONT}"
-	echo -e "\e[32mloading...\e[0m"
-    sleep 2
+    echo -e "${GREEN} =============================== ${FONT}"
+    printf "${YELLOW}loading... "
+    for _ in {1..10}; do
+        printf "▓"
+        sleep 0.2
+    done
+    echo -e "\e[32m done!${FONT}"
 }
 
+# Fungsi untuk mencetak pesan error
 function print_error() {
     echo -e "${ERROR} ${REDBG} $1 ${FONT}"
 }
 
+# Fungsi untuk mencetak pesan sukses
 function print_success() {
-    if [[ 0 -eq $? ]]; then
-		echo -e "${green} =============================== ${FONT}"
-        echo -e "${Green} # $1 berhasil dipasang"
-		echo -e "${green} =============================== ${FONT}"
-		echo -e "\e[32mloading...\e[0m"
-		echo -e "\e[32mloading...\e[0m"
-        sleep 2
+    if [[ $? -eq 0 ]]; then
+        echo -e "${GREEN} =============================== ${FONT}"
+        echo -e "${GREEN} # $1 berhasil dipasang"
+        echo -e "${GREEN} =============================== ${FONT}"
+        printf "${YELLOW}loading... "
+        for _ in {1..10}; do
+            printf "▓"
+            sleep 0.2
+        done
+        echo -e "\e[32m done!${FONT}"
     fi
 }
 
-### Cek root
+# Fungsi untuk memeriksa apakah pengguna adalah root
 function is_root() {
-    if [[ 0 == "$UID" ]]; then
+    if [[ $UID -eq 0 ]]; then
         print_ok "Root user Start installation process"
     else
         print_error "The current user is not the root user, please switch to the root user and run the script again"
     fi
-
 }
 
 # Buat direktori xray
@@ -308,8 +331,12 @@ echo -e "     1. Domain Sendiri"
 echo -e "     2. Gunakan Domain Random Khusus Digital ocean ISP LAIN"
 echo -e "    '------------------------------------"
 read -p "   Please select numbers 1-2 or Any Button(Random) : " host
-echo -e "\e[32mloading...\e[0m"
-echo -e "\e[32mloading...\e[0m"
+printf "${YELLOW}loading... "
+        for _ in {1..10}; do
+            printf "▓"
+            sleep 0.2
+        done
+        echo -e "\e[32m done!${FONT}"
 echo ""
 if [[ $host == "1" ]]; then
 echo -e "   \e[1;32mPlease Enter Your Subdomain $NC"
@@ -333,7 +360,7 @@ clear
 #GANTI PASSWORD DEFAULT
 function restart_system() {
     sleep 10
-    username="SDC Tunneling"
+    username="Projects TL"
     USRSC=$(curl -sS ${instalasi}user/user | grep $MYIP | awk '{print $2}')
     EXPSC=$(curl -sS ${instalasi}user/user | grep $MYIP | awk '{print $3}')
     TIMEZONE=$(printf '%(%H:%M:%S)T')
@@ -1042,6 +1069,12 @@ function menu(){
     chmod +x menu/*
     mv menu/* /usr/local/sbin
     rm -rf menu
+    printf "${YELLOW}loading... "
+        for _ in {1..10}; do
+            printf "▓"
+            sleep 0.2
+        done
+        echo -e "\e[32m done!${FONT}"
     #rm -rf menu.zip
 }
 
@@ -1178,10 +1211,17 @@ rm -rf /root/*.sh
 rm -rf /root/LICENSE
 rm -rf /root/README.md
 rm -rf /root/domain
+printf "${YELLOW}SSH... "
+        for _ in {1..10}; do
+            printf "▓"
+            sleep 0.2
+        done
+        echo -e "\e[32m done!${FONT}"
+        
 #sudo hostnamectl set-hostname $user
 secs_to_human "$(($(date +%s) - ${start}))"
 sudo hostnamectl set-hostname $username
-echo -e "${green} Script Successfull Installed"
+echo -e "${Green}Installation completed successfully${Font}"
 echo ""
 read -p "$( echo -e "Press ${YELLOW}[ ${NC}${YELLOW}Enter${NC} ${YELLOW}]${NC} For Reboot") "
 reboot
