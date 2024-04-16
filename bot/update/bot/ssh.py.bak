@@ -124,7 +124,7 @@ Button.inline(" 5 IP ","5")]])
 **━━━━━━━━━━━━━━━━━**
 **» Save Link Account:** `https://{domaintele.strip()}:81/ssh-{user.strip()}.txt`
 **» Expired Until:** `{later}`
-**» 🤖@proj3k_TL**
+**» 🤖@sdctunneling_bot**
 """
 			await event.respond(msg)
 	chat = event.chat_id
@@ -147,7 +147,7 @@ async def show_ssh(event):
 {z}
 ```
 **Show All SSH User**
-**» 🤖@proj3k_TL**
+**» 🤖@sdctunneling_bot**
 """,buttons=[[Button.inline("‹ Main Menu ›","menu")]])
 	sender = await event.get_sender()
 	a = valid(str(sender.id))
@@ -240,7 +240,7 @@ Button.inline(" 60 Menit ","60")]])
 **━━━━━━━━━━━━━━━━━**
 **» Save Link Account:** `https://{domaintele.strip()}:81/ssh-{user.strip()}.txt`
 **» Expired Until:** `{pup} Minutes`
-**» 🤖@proj3k_TL**
+**» 🤖@sdctunneling_bot**
 """
 			await event.respond(msg)
 	chat = event.chat_id
@@ -263,7 +263,7 @@ async def login_ssh(event):
 {z}
 
 **shows logged in users SSH Ovpn**
-**» 🤖@@proj3k_TL**
+**» 🤖@sdctunneling_bot**
 """,buttons=[[Button.inline("‹ Main Menu ›","menu")]])
 	sender = await event.get_sender()
 	a = valid(str(sender.id))
@@ -294,7 +294,7 @@ Button.inline("‹ Main Menu ›","menu")]]
 ✅ **» Hostname/IP :** `{domaintele.strip()}`
 ✅ **» ISP         :** `{z["isp"]}`
 ✅ **» Country     :** `{z["country"]}`
-🤖 **» @proj3k_TL**
+🤖 **» @sdctunneling_bot**
 ━━━━━━━━━━━━━━━━━━━━━━━ 
 """
 		await event.edit(msg,buttons=inline)
